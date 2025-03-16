@@ -58,7 +58,12 @@ public class Main {
 //        System.out.println();
 //        System.out.println(Main.isPalindrome("Dad"));
 
-        System.out.println(Main.isLeapYear(2024));
+        //System.out.println(Main.isLeapYear(2024));
+
+//        Main.convertString("");
+//        System.out.println("space");
+//        System.out.println(Main.convertString2(""));
+//        System.out.println("space");
 
 
     }
@@ -78,11 +83,86 @@ public class Main {
 //        return StringUtils.reverse(str).equalsIgnoreCase(str);
 //   }
 
-    public static boolean isLeapYear(int year) {
+//    public static boolean isLeapYear(int year) {
+//
+//        return (year % 400 == 0) || (year % 4 == 0) && (year % 100 != 0);
+//    }
 
-        return (year % 400 == 0) || (year % 4 == 0) && (year % 100 != 0);
+//    public static void convertString(String str) {
+//
+//        if (str.length() == 0 || Character.isUpperCase(str.charAt(0))) {
+//
+//            System.out.println(str);
+//        } else if (!Character.isUpperCase(str.charAt(0))) {
+//
+//            System.out.println(StringUtils.reverse(str));
+//        }
+//    }
+
+//    public static String convertString(String str) {
+//        if (str.equals("")) {
+//            return "";
+//        }
+//
+//        return Character.isUpperCase(str.charAt(0)) ? str : StringUtils.reverse(str);
+//    }
+
+    // Solution with if-else
+
+    // public static String convertString(String str) {
+    //     if (str.equals("")) {
+    //         return "";
+    //     }
+
+    //     if (Character.isUpperCase(str.charAt(0))) {
+    //         return str;
+    //     }
+
+    //     return StringUtils.reverse(str);
+    // }
+
+//    public static String convertString2(String str) {
+//
+//        return str.length() == 0 || Character.isUpperCase(str.charAt(0)) ? str : StringUtils.reverse(str);
+//    }
+
+//    public static String joinNumbersFromRange(int start, int finish) {
+//        // BEGIN (write your solution here)
+//        var i = start;
+//        var result = "";
+//
+//        while (i <= finish) {
+//            result = result + i;
+//            i += 1;
+//        }
+//
+//        return result;
+//        // END
+//    }
+
+//    public static int countChars(String str, char ch) {
+//        var i = 0;
+//        var count = 0;
+//        ch = Character.toLowerCase(ch);
+//        while (i < str.length()) {
+//            if (str.toLowerCase().charAt(i) == Character.toLowerCase(ch)) {
+//                count = count + 1;
+//            }
+//            i += 1;
+//        }
+//        return count;
+//    }
+
+    public static String encrypt(String str) {
+
+        var result = "";
+        for (var i = 0; i < str.length(); i += 2) {
+            var nextSymbol = (i + 2 > str.length()) ? "" : str.charAt(i + 1);
+            result = result + nextSymbol + str.charAt(i);
+        }
+
+        return result;
     }
 
-    //Год будет високосным, если он кратен (то есть делится без остатка) 400 или он одновременно кратен 4 и не кратен 100.
 
 }
